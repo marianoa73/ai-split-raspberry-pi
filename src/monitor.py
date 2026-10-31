@@ -5,7 +5,7 @@ La página se refresca sola (<meta refresh>), no tiene JavaScript y no acepta en
 escribirla se quitan los códigos de color y se tapan patrones típicos de secretos. Tapar es un esfuerzo razonable y
 no una garantía: la página debe servirse detrás de una contraseña y de HTTPS (ver docs/monitoring.md).
 
-Configuración por variables de entorno (ver examples/ai-lab.env.example):
+Configuración por variables de entorno (ver examples/ai-split.env.example):
   MONITOR_SESSIONS  sesiones tmux separadas por coma          (claude,codex,opencode)
   MONITOR_LINES     últimas líneas visibles por sesión        (24)
   MONITOR_REFRESH   segundos entre refrescos del navegador    (30)

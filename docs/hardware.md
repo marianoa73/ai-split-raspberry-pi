@@ -1,6 +1,6 @@
 # Hardware objetivo: todo en una Raspberry Pi 4B de 8 GB
 
-El diseño apunta a que **todo el laboratorio entre en una sola placa** y a que desde ahí se lancen los procesamientos.
+El diseño apunta a que **todo el sistema entre en una sola placa** y a que desde ahí se lancen los procesamientos.
 Lo único que corre aparte es el modelo propio, que necesita más memoria y CPU que una Raspberry.
 
 ![Una Raspberry Pi 4B con Caddy, k3s, las consolas en tmux y la página de monitoreo; el modelo propio en un equipo aparte](assets/05-hardware-unico.svg)

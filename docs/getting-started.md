@@ -6,7 +6,7 @@ Requisitos: Python 3.9 o más nuevo.
 
 ```bash
 git clone <URL de este repositorio>
-cd ai-operations-lab
+cd ai-split-raspberry-pi
 python3 -m unittest discover -s tests -v
 ```
 

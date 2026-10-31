@@ -7,9 +7,9 @@ Description=Consolas de IA en tmux
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-EnvironmentFile=%h/.config/ai-lab/ai-lab.env
-ExecStart=%h/ai-operations-lab/src/consoles.sh start
-ExecStop=%h/ai-operations-lab/src/consoles.sh stop
+EnvironmentFile=%h/.config/ai-split/ai-split.env
+ExecStart=%h/ai-split-raspberry-pi/src/consoles.sh start
+ExecStop=%h/ai-split-raspberry-pi/src/consoles.sh stop
 
 [Install]
 WantedBy=default.target

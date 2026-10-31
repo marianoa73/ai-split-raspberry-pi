@@ -1,4 +1,6 @@
-# AI Operations Lab
+# AI Split Raspberry Pi
+
+> *Modular workload distribution system for Raspberry Pi.*
 
 **Tres asistentes de IA y un modelo propio trabajando juntos sobre infraestructura propia, con una persona que decide.**
 Un esquema de delegación entre Claude, Codex y OpenRouter/OpenCode: quién hace qué, cómo se piden las tareas,
@@ -51,7 +53,7 @@ Una persona aprueba lo que sale hacia afuera y decide los cambios de modelo.
 - [`src/preflight.sh`](src/preflight.sh) y [sus pruebas](tests/test_preflight.sh): revisa los prerrequisitos antes de instalar (no cambia nada en el sistema).
 - [`src/consoles.sh`](src/consoles.sh) y [`src/monitor.py`](src/monitor.py): lanzar los asistentes en `tmux` y mirarlos desde el navegador con una página de sólo lectura que se refresca sola ([pruebas](tests/test_monitor.py)).
 - [`examples/`](examples/): configuración general lista para copiar (variables, Caddy con HTTPS, Open WebUI en k3s, servicios de systemd).
-- [`docs/`](docs/): [hardware](docs/hardware.md), [monitoreo](docs/monitoring.md), [manual de instalación](docs/install.md), [arquitectura](docs/architecture.md), [modelos](docs/models.md), [modelo propio](docs/local-model.md), [ejemplo de ejecución](docs/execution-example.md), [decisiones](docs/decisions.md), [cómo probarlo](docs/getting-started.md) y [límites](docs/limitations.md).
+- [`docs/`](docs/): [hardware](docs/hardware.md), [monitoreo](docs/monitoring.md), [operación diaria](docs/operations.md), [manual de instalación](docs/install.md), [arquitectura](docs/architecture.md), [modelos](docs/models.md), [modelo propio](docs/local-model.md), [ejemplo de ejecución](docs/execution-example.md), [decisiones](docs/decisions.md), [cómo probarlo](docs/getting-started.md) y [límites](docs/limitations.md).
 
 ## Qué garantiza este repositorio y qué no
 

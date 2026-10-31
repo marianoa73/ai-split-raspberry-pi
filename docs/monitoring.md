@@ -26,7 +26,7 @@ pantalla sino de archivos (ver [`architecture.md`](architecture.md)); la página
   `AKIA…`), JWT, bloques de clave privada y asignaciones como `token=…` o `password: …`. No detecta datos personales,
   montos ni secretos con otro formato. Por eso la página va **siempre** detrás de HTTPS y contraseña, y no se publica sin ellas.
 - **Pausa de emergencia:** si existe el archivo indicado en `MONITOR_PAUSE`, la página deja de mostrar el contenido de
-  las consolas (`touch ~/.config/ai-lab/monitor.pause`; para reanudar, borrarlo).
+  las consolas (`touch ~/.config/ai-split/monitor.pause`; para reanudar, borrarlo).
 - La sesión web nunca recibe entradas: no hay forma de enviar comandos desde la página.
 - Las pruebas ([`tests/test_monitor.py`](../tests/test_monitor.py)) cubren el tapado de secretos, el escapado de HTML, la
   pausa y la escritura atómica.

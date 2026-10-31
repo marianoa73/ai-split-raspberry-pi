@@ -1,5 +1,13 @@
 # Cambios
 
+## 0.5.0
+- El proyecto pasa a llamarse **AI Split Raspberry Pi** (antes AI Operations Lab): *Modular workload distribution system for Raspberry Pi*.
+  Cambian el nombre del repositorio, la carpeta de instalación (`~/ai-split-raspberry-pi`), el directorio de configuración
+  (`~/.config/ai-split/`), el espacio de nombres de Kubernetes (`ai-split`) y la variable `SPLIT_DOMAIN`.
+- Nuevo [`docs/operations.md`](docs/operations.md): operación diaria (arranque automático, supervisión, reinicio limpio
+  diario, control de consumo y monitoreo de varios equipos).
+- El archivo de ejemplo pasa a `examples/ai-split.env.example`.
+
 ## 0.4.0
 - `src/preflight.sh`: chequeo de prerrequisitos antes de instalar (arquitectura, sistema, memoria, disco, herramientas, red, hora, puertos), con pruebas; `docs/install.md` con la tabla de prerrequisitos, versiones usadas y espacio en disco (medido y estimado).
 - Hardware objetivo: todo el laboratorio en una Raspberry Pi 4B de 8 GB (`docs/hardware.md`, diagrama 05), con el modelo

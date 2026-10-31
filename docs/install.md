@@ -1,6 +1,6 @@
 # Manual de instalación: todo en una Raspberry Pi 4B
 
-Guía para que otra persona arme el mismo laboratorio **en una sola Raspberry Pi 4B de 8 GB** (más un equipo aparte si
+Guía para que otra persona arme el mismo sistema **en una sola Raspberry Pi 4B de 8 GB** (más un equipo aparte si
 quiere el modelo propio). Los pasos marcados con 🧑 **los hace una persona** porque requieren una cuenta, un pago, un
 inicio de sesión en el navegador o una decisión; el resto se puede ejecutar o automatizar.
 
@@ -15,8 +15,8 @@ falta (`FALTA`) y qué conviene mirar (`aviso`). Si hay algún `FALTA`, resolvel
 "Listo para instalar" seguí con el paso 2.
 
 ```bash
-git clone <URL> ~/ai-operations-lab        # o descargá el repositorio como .zip
-bash ~/ai-operations-lab/src/preflight.sh
+git clone <URL> ~/ai-split-raspberry-pi        # o descargá el repositorio como .zip
+bash ~/ai-split-raspberry-pi/src/preflight.sh
 ```
 
 Para correrlo hacen falta `bash`, `git` (o el .zip), `curl` y `python3`, que vienen con los sistemas de abajo. El resto de
@@ -65,19 +65,19 @@ versión que instales y anotala. Con versiones muy distintas los pasos pueden va
 3. Instalar lo base: `sudo apt install -y tmux git python3 curl ufw`.
 4. Instalar Node.js (versión LTS) desde el repositorio oficial de Node, porque las herramientas de IA lo necesitan.
 5. Firewall: `sudo ufw default deny incoming && sudo ufw allow ssh && sudo ufw allow 80,443/tcp && sudo ufw enable`.
-6. Clonar este repositorio: `git clone <URL> ~/ai-operations-lab`.
-7. Copiar la configuración: `mkdir -p ~/.config/ai-lab && cp ~/ai-operations-lab/examples/ai-lab.env.example ~/.config/ai-lab/ai-lab.env` y editarla (usuario, dominio, sesiones).
+6. Clonar este repositorio: `git clone <URL> ~/ai-split-raspberry-pi`.
+7. Copiar la configuración: `mkdir -p ~/.config/ai-split && cp ~/ai-split-raspberry-pi/examples/ai-split.env.example ~/.config/ai-split/ai-split.env` y editarla (usuario, dominio, sesiones).
 
 ## 3. Instalar los tres asistentes
 
 1. Instalar cada herramienta siguiendo su documentación oficial.
-2. 🧑 Iniciar sesión en cada una (abre el navegador o pide un código). **Las claves las guarda cada herramienta; no las pongas en `ai-lab.env`.**
+2. 🧑 Iniciar sesión en cada una (abre el navegador o pide un código). **Las claves las guarda cada herramienta; no las pongas en `ai-split.env`.**
 3. Recomendado: crear un usuario de Linux por asistente (`sudo adduser --disabled-password svc-builder`) e iniciar
    sesión en cada herramienta con el usuario que corresponda, para que no compartan archivos ni credenciales.
 4. Levantar las consolas en `tmux`:
    ```bash
-   set -a; . ~/.config/ai-lab/ai-lab.env; set +a
-   ~/ai-operations-lab/src/consoles.sh start
+   set -a; . ~/.config/ai-split/ai-split.env; set +a
+   ~/ai-split-raspberry-pi/src/consoles.sh start
    tmux attach -t claude     # para salir sin cerrar: Ctrl+B, luego D
    ```
 5. Que arranquen solas: copiar [`examples/systemd/ai-consoles.service`](../examples/systemd/ai-consoles.service) a
@@ -87,9 +87,9 @@ versión que instales y anotala. Con versiones muy distintas los pasos pueden va
 ## 4. Publicar con HTTPS (Caddy)
 
 1. Instalar Caddy desde su repositorio oficial (paquete para Debian/Ubuntu).
-2. Generar el hash de la contraseña del monitoreo: `caddy hash-password` y pegarlo en `ai-lab.env` (`MONITOR_PASS_HASH`).
+2. Generar el hash de la contraseña del monitoreo: `caddy hash-password` y pegarlo en `ai-split.env` (`MONITOR_PASS_HASH`).
 3. Copiar [`examples/caddy/Caddyfile`](../examples/caddy/Caddyfile) a `/etc/caddy/Caddyfile` y hacer que el servicio lea las
-   variables (`sudo systemctl edit caddy` → `[Service]` / `EnvironmentFile=/home/USUARIO/.config/ai-lab/ai-lab.env`).
+   variables (`sudo systemctl edit caddy` → `[Service]` / `EnvironmentFile=/home/USUARIO/.config/ai-split/ai-split.env`).
 4. `sudo caddy validate --config /etc/caddy/Caddyfile && sudo systemctl reload caddy`.
 5. Caddy obtiene y renueva solo el **certificado HTTPS** de Let's Encrypt. Requiere que el dominio apunte a tu IP y que
    los puertos 80/443 lleguen a la placa. **Sólo en la red local:** usá un nombre interno y la CA interna de Caddy
@@ -97,11 +97,11 @@ versión que instales y anotala. Con versiones muy distintas los pasos pueden va
 
 ## 5. Monitoreo web
 
-1. Crear la carpeta de salida: `sudo mkdir -p /var/lib/ai-lab/monitor && sudo chown $USER /var/lib/ai-lab/monitor`.
+1. Crear la carpeta de salida: `sudo mkdir -p /var/lib/ai-split/monitor && sudo chown $USER /var/lib/ai-split/monitor`.
 2. Copiar [`ai-monitor.service`](../examples/systemd/ai-monitor.service) y [`ai-monitor.timer`](../examples/systemd/ai-monitor.timer) a
    `~/.config/systemd/user/` y ejecutar `systemctl --user enable --now ai-monitor.timer`.
 3. 🧑 Abrir `https://TU_DOMINIO/monitor/`, entrar con el usuario y la contraseña y comprobar que se ven las consolas.
-4. Pausa de emergencia: `touch ~/.config/ai-lab/monitor.pause`. Detalles en [`monitoring.md`](monitoring.md).
+4. Pausa de emergencia: `touch ~/.config/ai-split/monitor.pause`. Detalles en [`monitoring.md`](monitoring.md).
 
 ## 6. Open WebUI en k3s
 

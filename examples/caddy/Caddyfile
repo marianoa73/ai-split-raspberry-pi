@@ -1,7 +1,7 @@
 # Publicador con HTTPS automático. Caddy pide y renueva el certificado solo (hacen falta los puertos 80 y 443
 # alcanzables desde Internet, o un desafío DNS; para uso sólo en la red local ver docs/install.md).
-# Variables: ver examples/ai-lab.env.example (Caddy las lee del entorno del servicio).
-{$LAB_DOMAIN} {
+# Variables: ver examples/ai-split.env.example (Caddy las lee del entorno del servicio).
+{$SPLIT_DOMAIN} {
 	encode gzip
 
 	# Monitoreo de consolas: página estática, de sólo lectura, con contraseña.
@@ -9,7 +9,7 @@
 		basic_auth {
 			{$MONITOR_USER} {$MONITOR_PASS_HASH}
 		}
-		root * /var/lib/ai-lab/monitor
+		root * /var/lib/ai-split/monitor
 		file_server
 	}
 

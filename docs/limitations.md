@@ -1,6 +1,6 @@
 # Límites
 
-- Es **una persona** operando su propio laboratorio: no hay equipo, SLA ni carga de producción de clientes.
+- Es **una persona** operando su propio sistema: no hay equipo, SLA ni carga de producción de clientes.
 - La muestra de código es pequeña a propósito. El sistema completo no se publica.
 - `route()` recomienda un destino a partir de etiquetas: no detecta secretos, no anonimiza y no pide aprobaciones. Si una
   etiqueta es incorrecta, la recomendación también.

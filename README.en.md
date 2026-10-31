@@ -1,4 +1,6 @@
-# AI Operations Lab
+# AI Split Raspberry Pi
+
+> *Modular workload distribution system for Raspberry Pi.*
 
 **Three AI assistants and a self-hosted model working together on self-hosted infrastructure, with a human making the calls.**
 A delegation workflow between Claude, Codex and OpenRouter/OpenCode: who does what, how tasks are requested,
