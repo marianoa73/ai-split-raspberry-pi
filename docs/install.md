@@ -1,5 +1,7 @@
 # Manual de instalación: todo en una Raspberry Pi 4B
 
+[English version](install.en.md)
+
 Guía para que otra persona arme el mismo sistema **en una sola Raspberry Pi 4B de 8 GB** (más un equipo aparte si
 quiere el modelo propio). Los pasos marcados con 🧑 **los hace una persona** porque requieren una cuenta, un pago, un
 inicio de sesión en el navegador o una decisión; el resto se puede ejecutar o automatizar.
@@ -119,7 +121,7 @@ versión que instales y anotala. Con versiones muy distintas los pasos pueden va
 ## 8. Verificación final
 
 ```bash
-python3 -m unittest discover -s tests -v   # 21 pruebas: enrutador y monitoreo
+python3 -m unittest discover -s tests -v   # enrutador, monitoreo y documentación bilingüe
 bash tests/test_delegate.sh                # delegación con un tmux simulado
 bash tests/test_consoles.sh                # lanzador de consolas con un tmux simulado
 bash tests/test_preflight.sh               # chequeo de prerrequisitos con datos simulados

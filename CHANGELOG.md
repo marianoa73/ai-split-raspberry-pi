@@ -1,5 +1,10 @@
 # Cambios
 
+## 0.5.1
+- README principal en inglés (`README.md`) y versión completa en español (`README.es.md`).
+- Manual de instalación y guía para probarlo en inglés (`docs/install.en.md`, `docs/getting-started.en.md`).
+- Prueba que mantiene sincronizadas las dos versiones (`tests/test_i18n.py`).
+
 ## 0.5.0
 - El proyecto pasa a llamarse **AI Split Raspberry Pi** (antes AI Operations Lab): *Modular workload distribution system for Raspberry Pi*.
   Cambian el nombre del repositorio, la carpeta de instalación (`~/ai-split-raspberry-pi`), el directorio de configuración

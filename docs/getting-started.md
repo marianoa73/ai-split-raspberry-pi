@@ -1,5 +1,7 @@
 # Cómo probarlo
 
+[English version](getting-started.en.md)
+
 ## Recorrido 1: el enrutador (sin instalar nada)
 
 Requisitos: Python 3.9 o más nuevo.
@@ -10,7 +12,7 @@ cd ai-split-raspberry-pi
 python3 -m unittest discover -s tests -v
 ```
 
-Resultado esperado: 21 pruebas en verde (11 del enrutador y 10 del monitoreo). Las tareas de `demo/fixtures/tasks.json` están inventadas para este repositorio.
+Resultado esperado: 22 pruebas en verde (11 del enrutador, 10 del monitoreo y 1 de la documentación bilingüe). Las tareas de `demo/fixtures/tasks.json` están inventadas para este repositorio.
 
 Para explorar:
 - Cambiá una etiqueta en `demo/fixtures/tasks.json` y corré las pruebas: el enrutador debería mandar la tarea a otro participante.
