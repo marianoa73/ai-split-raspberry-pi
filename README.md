@@ -29,7 +29,7 @@ the HTTPS publisher (Caddy), Open WebUI on k3s and a monitoring web page that re
 self-hosted model runs separately, on an Intel i5 machine with 32 GB. Details and memory budget (estimated) in
 [`docs/hardware.md`](docs/hardware.md) (Spanish); [installation guide for third parties](docs/install.en.md).
 
-![Hardware: one Raspberry Pi 4B with Caddy, k3s, tmux and monitoring; the self-hosted model on a separate machine](docs/assets/05-hardware-unico.svg)
+![Hardware: one Raspberry Pi 4B with Caddy, k3s, tmux and monitoring; the self-hosted model on a separate machine](docs/assets/05-hardware-unico.en.svg)
 
 ## The participants
 
@@ -42,9 +42,9 @@ self-hosted model runs separately, on an Intel i5 machine with 32 GB. Details an
 
 A person approves everything that goes out and decides model changes.
 
-![Overview: third-party services on top, the person in the middle and the private network below](docs/assets/01-diagrama-general.svg)
+![Overview: third-party services on top, the person in the middle and the private network below](docs/assets/01-diagrama-general.en.svg)
 
-*High-resolution version: [`01-diagrama-general.png`](docs/assets/01-diagrama-general.png). Diagrams are in Spanish; each one is described in the text around it.*
+*High-resolution version: [`01-diagrama-general.png`](docs/assets/01-diagrama-general.en.png). The guides under `docs/` still use the Spanish diagrams.*
 
 ## What it includes
 
